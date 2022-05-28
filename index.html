@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DAA visualizer</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    canvas {
+      position: absolute;
+    }
+    .control-panel {
+      top: 0;
+      left: 0;
+      position: absolute;
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+    }
+    .control-panel__actions {
+      width: 350px;
+      display: flex;
+      list-style: none;
+      justify-content: space-evenly;
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE10+/Edge */
+      user-select: none; /* Standard */
+    }
+  </style>
+  <body>
+    <div>
+      <canvas id="background"></canvas>
+      <canvas id="grid"></canvas>
+      <div class="control-panel">
+        <ul class="control-panel__actions">
+          <li>
+            <input type="radio" name="type" id="start" value="start" /><label
+              for="start"
+              >Start node</label
+            >
+          </li>
+          <li>
+            <input type="radio" name="type" id="end" value="end" /><label
+              for="end"
+              >Destination node</label
+            >
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="type"
+              id="barrier"
+              value="barrier"
+            /><label for="barrier">Barrier node</label>
+          </li>
+        </ul>
+        <select name="" id="pathFinder">
+          <option value="A STAR">A STAR</option>
+          <option value="L STAR">L STAR</option>
+        </select>
+        <label for="coefficient">w</label>
+        <input type="number" id="coefficient">
+      </div>
+    </div>
+  </body>
+  <script src="/frontend/background.js"></script>
+  <script src="/backend/core/openList.js"></script>
+  <script src="/backend/core/util.js"></script>
+  <script src="/backend/core/deque.js"></script>
+  <script src="/backend/core/heap.js"></script>
+  <script src="/backend/core/node.js"></script>
+  <script src="/backend/core/grid.js"></script>
+  <script src="/backend/algorithms/Astar.js"></script>
+  <script src="/backend/algorithms/Lstar.js"></script>
+  <script src="/frontend/app.js"></script>
+  <script src="/frontend/control-panel.js"></script>
+</html>
