@@ -6,13 +6,13 @@ class Background {
     }
     render() {
         this.ctx.clearRect(0, 0, innerWidth, innerHeight);
-        let cols = Math.ceil(innerWidth/this.squareWidth);
-        let rows = Math.ceil(innerHeight/this.squareHeight);
+        let cols = Math.ceil(1000/this.squareWidth);
+        let rows = Math.ceil(1000/this.squareHeight);
 
         for (let i=0; i < cols; i++) {
             this.ctx.beginPath();
             this.ctx.moveTo(this.squareWidth*i, 0);
-            this.ctx.lineTo(this.squareWidth*i, innerHeight);
+            this.ctx.lineTo(this.squareWidth*i,innerHeight);
             this.ctx.stroke();
         }
         for (let i=0; i < rows; i++) {

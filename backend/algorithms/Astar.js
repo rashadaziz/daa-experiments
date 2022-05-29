@@ -1,5 +1,4 @@
-const Heap = require("../core/heap");
-const euclidean = require("../core/util").euclidean;
+
 
 function findPath(sx, sy, dx, dy, grid) {
   let numberOfNodesOpened = 1;
@@ -21,15 +20,15 @@ function findPath(sx, sy, dx, dy, grid) {
     current.closed = true;
 
     if (current === dest) {
-      // console.log("========================================");
-      // console.log("A* algorithm", performance.now() - start);
-      // console.log(`number of nodes opened: ${numberOfNodesOpened}`);
-      // console.log(`number of nodes updated: ${openNodesUpdated}`);
-      // console.log(`total g cost: ${current.g}`);
-      // console.log("========================================");
-      // return reconstructPath(dest);
-      const compTime = performance.now() - start;
-      return {compTime: compTime, nodesOpened: numberOfNodesOpened, nodesUpdated: openNodesUpdated}
+      console.log("========================================");
+      console.log("A* algorithm", performance.now() - start);
+      console.log(`number of nodes opened: ${numberOfNodesOpened}`);
+      console.log(`number of nodes updated: ${openNodesUpdated}`);
+      console.log(`total g cost: ${current.g}`);
+      console.log("========================================");
+      return reconstructPath(dest);
+      // const compTime = performance.now() - start;
+      // return {compTime: compTime, nodesOpened: numberOfNodesOpened, nodesUpdated: openNodesUpdated}
     }
 
     for (let neighbor of grid.getNodeNeighbors(current)) {
@@ -63,4 +62,4 @@ function findPath(sx, sy, dx, dy, grid) {
   return [];
 }
 
-exports.findPath = findPath
+

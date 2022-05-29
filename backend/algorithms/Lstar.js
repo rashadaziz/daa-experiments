@@ -1,8 +1,4 @@
-const deque = require("../core/deque");
-const BucketElement = deque.BucketElement;
-const Bucket = deque.Bucket;
-const OpenList = require("../core/openList").OpenList;
-const euclidean = require("../core/util").euclidean;
+
 
 function findPathL(sx, sy, dx, dy, grid, dgmin, w) {
   let numberOfNodesOpened = 1
@@ -38,18 +34,18 @@ function findPathL(sx, sy, dx, dy, grid, dgmin, w) {
       openList.decSize();
 
       if (firstNode === dest) {
-        // console.log("========================================")
-        // console.log("L* algorithm", performance.now() - start);
-        // console.log(`number of nodes opened: ${numberOfNodesOpened}`)
-        // console.log(`number of nodes updated: ${openNodesUpdated}`)
-        // console.log(`total g cost: ${firstNode.g}`)
-        // console.log("========================================")
+        console.log("========================================")
+        console.log("L* algorithm", performance.now() - start);
+        console.log(`number of nodes opened: ${numberOfNodesOpened}`)
+        console.log(`number of nodes updated: ${openNodesUpdated}`)
+        console.log(`total g cost: ${firstNode.g}`)
+        console.log("========================================")
 
-        // pathExist = true;
-        // return reconstructPath(firstNode);
+        pathExist = true;
+        return reconstructPath(firstNode);
 
-        const compTime = performance.now() - start;
-        return {compTime: compTime, nodesOpened: numberOfNodesOpened, nodesUpdated: openNodesUpdated}
+        // const compTime = performance.now() - start;
+        // return {compTime: compTime, nodesOpened: numberOfNodesOpened, nodesUpdated: openNodesUpdated}
       }
 
 
@@ -114,4 +110,3 @@ function findPathL(sx, sy, dx, dy, grid, dgmin, w) {
 }
 
 
-exports.findPath = findPathL

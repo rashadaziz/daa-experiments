@@ -17,5 +17,3 @@ function reconstructPath(current) {
   return path.reverse();
 }
 
-exports.manhattan = manhattan
-exports.euclidean = euclidean

@@ -6,4 +6,3 @@ class Node {
     }
 }
 
-exports.Node = Node;

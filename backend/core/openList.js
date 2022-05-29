@@ -20,4 +20,3 @@ class OpenList {
     }
 }
 
-exports.OpenList = OpenList;

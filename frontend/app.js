@@ -2,7 +2,7 @@ const backgroundCanvas = document.getElementById("background");
 backgroundCanvas.height = innerHeight;
 backgroundCanvas.width = innerWidth;
 const backgroundCtx = backgroundCanvas.getContext("2d");
-const background = new Background(backgroundCtx, 9.6, 9.8);
+const background = new Background(backgroundCtx, 8, 8);
 const gridCanvas = document.getElementById("grid");
 gridCanvas.height = innerHeight;
 gridCanvas.width = innerWidth;
@@ -10,20 +10,20 @@ const gridCtx = gridCanvas.getContext("2d");
 let animationController;
 let currentFinder = "A STAR"
 
-const SQ_HEIGHT = 9.8;
-const SQ_WIDTH = 9.6;
+const SQ_HEIGHT = 8;
+const SQ_WIDTH = 8;
 const GRID_SIZE = {
-  width: Math.ceil(innerWidth / SQ_WIDTH),
-  height: Math.ceil(innerHeight / SQ_HEIGHT),
+  width: Math.ceil(1000 / SQ_WIDTH),
+  height: Math.ceil(1000 / SQ_HEIGHT),
 };
 let mouseDown = false;
 let mode = null;
 
-const START_NODE = { x: 10, y: 10 };
-const END_NODE = { x: 190, y: 90 };
+const START_NODE = { x: 1, y: 1 };
+const END_NODE = { x: 99, y: 49 };
 
 const GRID = new Grid(GRID_SIZE.width, GRID_SIZE.height);
-GRID.generateRandomMaze()
+// GRID.generateRandomMaze()
 let constructedPath;
 
 function main() {

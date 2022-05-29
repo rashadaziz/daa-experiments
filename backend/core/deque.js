@@ -48,5 +48,3 @@ class Bucket {
   }
 }
 
-exports.BucketElement = BucketElement;
-exports.Bucket = Bucket;

@@ -1,4 +1,4 @@
-const Node = require("./node").Node
+
 class Grid {
   constructor(width, height, matrix) {
     if (typeof width !== "object") {
@@ -128,5 +128,3 @@ class Grid {
     }
   }
 }
-
-exports.Grid = Grid
